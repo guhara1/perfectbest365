@@ -17,7 +17,7 @@
   var parents = document.querySelectorAll(".nav-menu > li.has-sub > a");
   parents.forEach(function (a) {
     a.addEventListener("click", function (e) {
-      if (window.matchMedia("(max-width: 920px)").matches) {
+      if (window.matchMedia("(max-width: 1180px)").matches) {
         e.preventDefault();
         a.parentElement.classList.toggle("open");
       }
