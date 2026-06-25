@@ -449,7 +449,7 @@ table.price td:first-child { text-align: left; font-weight: 600; color: var(--te
   background: rgba(5, 6, 15, 0.6); border-top: 1px solid var(--glass-line-2);
   backdrop-filter: blur(14px); padding: 58px 0 32px;
 }
-.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 34px; margin-bottom: 38px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 34px; margin-bottom: 38px; }
 .footer-grid h4 { font-size: 0.95rem; margin-bottom: 16px; color: var(--text); }
 .footer-grid ul { list-style: none; }
 .footer-grid ul li { margin-bottom: 9px; }
@@ -479,7 +479,7 @@ table.price td:first-child { text-align: left; font-weight: 600; color: var(--te
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .nav-toggle { display: inline-flex; }
   .nav-phone { display: none; }
   .nav-cta .btn-line { display: none; }
@@ -517,6 +517,70 @@ table.price td:first-child { text-align: left; font-weight: 600; color: var(--te
   .hero-stats .stat { min-width: 130px; padding: 16px 20px; }
   .section { padding: 60px 0; }
   .form { padding: 24px 18px; }
+}
+
+/* ---------- Area / Local SEO (지역 페이지 · 내부링크) ---------- */
+/* 롱테일 키워드 칩 */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chips.center { justify-content: center; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 16px; border-radius: 999px;
+  font-size: 0.86rem; font-weight: 600; color: var(--text-dim);
+  background: var(--glass); border: 1px solid var(--glass-line);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  transition: color .18s, border-color .18s, box-shadow .18s, transform .18s;
+}
+.chip:hover {
+  color: #eaf0ff; border-color: rgba(91, 140, 255, 0.6);
+  box-shadow: var(--glow-blue); transform: translateY(-2px);
+}
+.chip .pin { color: var(--cyan); }
+
+/* 지역 카드 (홈 · 허브) */
+.area-card h3 { display: flex; align-items: center; gap: 9px; }
+.area-card h3 .pin {
+  font-size: 1rem; width: 34px; height: 34px; display: grid; place-items: center;
+  border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(91,140,255,0.22), rgba(109,92,246,0.18));
+  border: 1px solid var(--glass-line);
+}
+.area-card .area-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.area-card .area-meta span {
+  font-size: 0.78rem; color: var(--text-dim);
+  padding: 4px 11px; border-radius: 999px;
+  background: rgba(91, 140, 255, 0.10); border: 1px solid var(--glass-line-2);
+}
+.area-card .more {
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-top: 18px; font-weight: 700; font-size: 0.9rem;
+  background: linear-gradient(120deg, var(--cyan), var(--blue));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.area-card .more::after { content: "→"; -webkit-text-fill-color: var(--cyan); }
+
+/* 인라인 평점/점수 배지 */
+.rating-inline {
+  display: inline-flex; align-items: center; gap: 11px; flex-wrap: wrap;
+  justify-content: center; margin-top: 14px;
+  padding: 10px 20px; border-radius: 999px;
+  background: var(--glass); border: 1px solid var(--glass-line);
+  backdrop-filter: blur(10px); box-shadow: var(--inset-top);
+}
+.rating-inline .stars {
+  letter-spacing: 3px; font-size: 1.08rem;
+  background: linear-gradient(120deg, var(--gold-soft), var(--gold));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.rating-inline .score { font-weight: 800; color: var(--text); font-size: 1.05rem; }
+.rating-inline .count { font-size: 0.82rem; color: var(--text-dim); }
+
+/* 관련 지역 링크(크로스 내부링크) */
+.related-areas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+
+/* 태블릿에서 푸터 4열 → 2열 (모바일 단일열 전환 전 구간) */
+@media (min-width: 561px) and (max-width: 1180px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* 모션 최소화 선호 사용자 배려 */
